@@ -2,6 +2,8 @@
 
 ## Book "Full-Stack React Projects", second edition
 
+![alt text](image.png)
+
 Full-Stack React Projects - Second Edition: Learn MERN stack development by building modern web apps using MongoDB, Express, React, and Node.js 2nd ed. Edition
 by Shama Hoque (Author)
 
@@ -33,7 +35,7 @@ Make your MERN stack applications reliable and scalable with industry best pract
 Who this book is for
 
 This is one of the most useful web development books for JavaScript developers who may have worked with React but have minimal experience in full-stack development with Node, Express, and MongoDB.
-![alt text](image.png)
+
 
 ### 3.16.2025
 
