@@ -29,3 +29,6 @@ The user model will define the user details to be stored in the MongoDB database
 
 ## Auth with JSON Web Tokens
 It is a stateless authentication mechanism that does not require storing user state on the server (or no need on session tracking).
+
+## Folder Structure
+
