@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import userRoutes from './routes/user.routes';
+import authRoutes from './routes/auth.routes';
 
 
 //  app declaration
@@ -16,5 +17,6 @@ app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
 app.use('/', userRoutes);
+app.use('/', authRoutes);
 
 export default app;
