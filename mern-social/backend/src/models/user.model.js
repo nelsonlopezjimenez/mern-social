@@ -29,4 +29,10 @@ const UserSchema  = new mongoose.Schema({
     // salt: String
 });
 
+UserSchema.methods = {
+    authenticate: function (password) {
+        return password === this.password;
+    }
+}
+
 export default mongoose.model('User', UserSchema);

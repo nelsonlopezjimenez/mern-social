@@ -19,6 +19,11 @@ const create = async (req, res) => {
     }
 };
 // curl -d "key=value&key=value2" -X POST URL
+// curl -d "name=value&email=value2&password=val3" -X POST URL
+// curl -d "name=naranja&email=naranje@col.edu&password=1234" -X POST URL
+// curl https://reqbin.com/echo/get/json -H "Accept: application/json"
+// -H "Authorization: Bearer {token}"
+
 const list = async (req, res) => {
     try {
         let users = await User.find().select("name email updated created");
