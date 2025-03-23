@@ -1,4 +1,10 @@
 //  helpers/dbErrorHandler
+
+
+const getErrorMessage11 = (err) => {
+   console.log(err)
+
+}
 const getErrorMessage = (err) => {
     let message = ''
     if (err.code) {

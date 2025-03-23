@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/forms -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data -->
+<!-- be paranoid never trust your users!!! -->
+<!-- https://www.mongodb.com/try/download/community-edition/releases -->
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <title>InputForm</title>
 </head>
 
 <body>
-    <div>
-        <form action="http://localhost:3000/api/users" method="get">
-            <div class="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
-                <button type="submit" value="Submit using GET"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">GET ALL /api/users</button>
+  <div>
+    <h1>GET all records</h1>
+    <form action="http://localhost:3000/api/users" method="get">
+      <div class="mt-6 flex items-center justify-end gap-x-6">
 
-                <button type="submit" formmethod="post" value="Submit using POST"
-                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">POST /api/users</button>
-            </div>
-        </form>
-    </div>
+        <button type="submit" value="Submit using GET"
+          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">GET
+          ALL /api/users</button>
 
 
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <h1>GET one record</h1>
+    <form action="http://localhost:3000/api/users/67ddea2f7cae854bbabe3622" method="get">
+      <div class="mt-6 flex items-center justify-end gap-x-6">
+
+        <button type="submit" value="Submit using GET"
+          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">GET
+          one /api/users/67ddea2f7cae854bbabe3622</button>
+      </div>
+    </form>
+  </div>
+<br> <br> <hr>
+
+  <div>
     <form action="http://localhost:3000/api/users/" method="post">
 
-        <!-- <form action="http://localhost:3000/auth/signin" method="post"> -->
-        <div class="border-b border-gray-900/10 pb-12">
-            <!--  -->
-            <h2 class="text-base/7 font-semibold text-gray-900">Personal Information</h2>
+      <!-- <form action="http://localhost:3000/auth/signin" method="post"> -->
+      <div class="border-b border-gray-900/10 pb-12">
+        <!--  -->
+        <h2 class="text-base/7 font-semibold text-gray-900">New Personal Information</h2>
 
 
-            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div class="sm:col-span-3">
-                    <label for="first-name" class="block text-sm/6 font-medium text-gray-900">Name</label>
-                    <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                    </div>
-                </div>
+        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols.-6">
+          <div class="sm:col-span-3">
+            <label for="name" class="block text-sm/6 font-medium text-gray-900">Name</label>
+            <div class="mt-2">
+              <input type="text" name="name" id="name" autocomplete="name"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
 
 
-                <div class="sm:col-span-4">
-                    <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
-                    <div class="mt-2">
-                        <input id="email" name="email" type="email" autocomplete="email"
-                            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                    </div>
-                </div>
+          <div class="sm:col-span-4">
+            <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
+            <div class="mt-2">
+              <input id="email" name="email" type="email" autocomplete="email"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
 
-                <div class="sm:col-span-4">
-                    <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
-                    <div class="mt-2">
-                        <input id="password" name="password" type="password" autocomplete="password"
-                            class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                    </div>
-                </div>
-                <div class="mt-6 flex items-center justify-end gap-x-6">
-                    <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
-                    <button type="submit" value="Submit using GET"
-                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">GET</button>
-                    <!-- <input type="submit" value="Submit using GET"> -->
-                    <textarea name="ta" id="ta" cols="30" rows="10"></textarea>
-                    <!-- <input type="submit" formmethod="post" value="Submit using POST"> -->
-                    <!-- </div>
-
-
-                <div class="mt-6 flex items-center justify-end gap-x-6"> -->
-
-                    <button type="submit" formmethod="post" value="Submit using POST"
-                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">POST</button>
-                </div>
+          <div class="sm:col-span-4">
+            <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
+            <div class="mt-2">
+              <input id="password" name="password" type="password" autocomplete="password"
+                class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+          </div>
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
+            <button type="submit" value="Submit using GET"
+              class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">GET</button>
+           
+            <button type="submit" formmethod="post" value="Submit using POST"
+              class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">POST
+              /api/users</button>
+          </div>
     </form>
-
-    <!-- <form>
+  </div>
+  <!-- <form>
         <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-base/7 font-semibold text-gray-900">Profile</h2>
