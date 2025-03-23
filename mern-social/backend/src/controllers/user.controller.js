@@ -86,7 +86,7 @@ const remove = async (req, res) => {
     try {
         let user = req.profile;
         // let deletedUser = await user.remove() // original and deprecated FAILED
-        // let deletedUser = await user.deleteOne({_id: user._id}) // INSTANCE OK
+        // let deletedUser = await user.deleteOne({_id: user._id}) // INSTANCE  OK
         let deletedUser = await User.findOneAndDelete({_id: user._id}) //MODEL OK
         res.status(201).json(deletedUser)
     } catch (err) {
@@ -109,7 +109,6 @@ export default {
     read,
 }
 
-30
 
 
 // https://stackoverflow.com/questions/46995522/findoneandupdate-is-not-a-function
